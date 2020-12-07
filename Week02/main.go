@@ -7,42 +7,19 @@ package main
 import (
 	"github.com/kataras/iris/v12"
 	"github.com/pkg/errors"
+	"github.com/ringsaturn/GO-000/Week02/biz"
+	"github.com/ringsaturn/GO-000/Week02/code"
 )
 
-// ErrNotFound error
-var ErrNotFound = errors.New("NotFound")
-
-// Movie define info for a movie
-type Movie struct {
-	Name   string `json:"name"`
-	EnName string `json:"enname"`
-}
-
-func dao(name string) (*Movie, error) {
-	if name != "蜜桃成熟时33D" {
-		return nil, errors.WithMessage(ErrNotFound, name)
-	}
-	movie := &Movie{
-		Name:   name,
-		EnName: "The 33D Invader",
-	}
-	return movie, nil
-}
-
-func biz(name string) (*Movie, error) {
-	movie, err := dao(name)
-	if err != nil {
-		return nil, err
-	}
-	return movie, nil
-}
-
 func movieService(ctx iris.Context) {
-	movieInfo, err := biz(ctx.URLParam("name"))
+	movieInfo, err := biz.Movie(ctx.URLParam("name"))
 	if err != nil {
-		statusCode := 400
-		if errors.Is(err, errors.New("NotFound")) {
+		statusCode := 500
+		if errors.Is(err, code.ErrNotFound) {
 			statusCode = 404
+		}
+		if errors.Is(err, code.ErrUnknown) {
+			statusCode = 500
 		}
 		ctx.StopWithProblem(statusCode, iris.NewProblem().
 			Title("FailFetchMovie").DetailErr(err))
