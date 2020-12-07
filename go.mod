@@ -10,4 +10,5 @@ require (
 	github.com/pkg/errors v0.9.1
 	github.com/smartystreets/goconvey v1.6.4 // indirect
 	github.com/yudai/pp v2.0.1+incompatible // indirect
+	golang.org/x/sync v0.0.0-20201020160332-67f06af15bc9
 )
