@@ -3,7 +3,7 @@ package dao
 import (
 	"errors"
 
-	"github.com/ringsaturn/GO-000/Week02/model"
+	"github.com/ringsaturn/Go-000/Week02/model"
 )
 
 // ErrNotFound error

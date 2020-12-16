@@ -2,9 +2,9 @@ package biz
 
 import (
 	"github.com/pkg/errors"
-	"github.com/ringsaturn/GO-000/Week02/code"
-	"github.com/ringsaturn/GO-000/Week02/dao"
-	"github.com/ringsaturn/GO-000/Week02/model"
+	"github.com/ringsaturn/Go-000/Week02/code"
+	"github.com/ringsaturn/Go-000/Week02/dao"
+	"github.com/ringsaturn/Go-000/Week02/model"
 )
 
 // Movie biz

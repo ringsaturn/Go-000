@@ -1,10 +1,11 @@
-module github.com/ringsaturn/GO-000
+module github.com/ringsaturn/Go-000
 
 go 1.14
 
 require (
 	github.com/Joker/hpp v1.0.0 // indirect
 	github.com/k0kubun/colorstring v0.0.0-20150214042306-9440f1994b88 // indirect
+	github.com/kataras/iris v0.0.2
 	github.com/kataras/iris/v12 v12.2.0-alpha.0.20201126085352-5b6802d00eaf
 	github.com/mattn/go-colorable v0.1.8 // indirect
 	github.com/pkg/errors v0.9.1

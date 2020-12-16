@@ -7,8 +7,8 @@ package main
 import (
 	"github.com/kataras/iris/v12"
 	"github.com/pkg/errors"
-	"github.com/ringsaturn/GO-000/Week02/biz"
-	"github.com/ringsaturn/GO-000/Week02/code"
+	"github.com/ringsaturn/Go-000/Week02/biz"
+	"github.com/ringsaturn/Go-000/Week02/code"
 )
 
 func movieService(ctx iris.Context) {
